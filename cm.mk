@@ -1,16 +1,15 @@
-$(call inherit-product, device/htc/m7vzw/full_m7vzw.mk)
+# Release name
+PRODUCT_RELEASE_NAME := m7vzw
 
-$(call inherit-product, vendor/cm/config/nfc_enhanced.mk)
-
+# Inherit some common CM stuff.
 $(call inherit-product, vendor/cm/config/common_full_phone.mk)
 
-PRODUCT_BUILD_PROP_OVERRIDES += \
-    PRODUCT_NAME=HTCOneVZW \
-    BUILD_ID=JDQ39 \
-    BUILD_FINGERPRINT="VERIZON/HTCOneVZW/m7wlv:4.2.2/JDQ39/221778.10:user/release-keys" \
-    PRIVATE_BUILD_DESC="1.10.605.10 CL221778 release-keys"
+# Inherit device configuration
+$(call inherit-product, device/htc/m7vzw/device_m7vzw.mk)
 
-PRODUCT_GMS_CLIENTID_BASE := android-verizon
-
-PRODUCT_NAME := cm_m7vzw
+# Device identifier - this must come after all inclusions
 PRODUCT_DEVICE := m7vzw
+PRODUCT_NAME := cm_m7vzw
+PRODUCT_BRAND := htc
+PRODUCT_MODEL := One
+PRODUCT_MANUFACTURER := HTC
