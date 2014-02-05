@@ -16,6 +16,7 @@ endif
 
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/recovery/lpm.rc:recovery/root/lpm.rc \
+    $(LOCAL_PATH)/recovery/init.recovery.qcom.rc:root/init.recovery.qcom.rc \
     $(LOCAL_PATH)/recovery/charger:recovery/root/sbin/charger \
     $(LOCAL_PATH)/recovery/choice_fn:recovery/root/sbin/choice_fn \
     $(LOCAL_PATH)/recovery/offmode_charging:recovery/root/sbin/offmode_charging \
