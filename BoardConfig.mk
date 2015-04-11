@@ -17,7 +17,7 @@
 USE_CAMERA_STUB := true
 
 # inherit from the proprietary version
--include vendor/htc/m7/BoardConfigVendor.mk
+-include vendor/htc/m7univ/BoardConfigVendor.mk
 
 # Bootloader
 TARGET_BOOTLOADER_BOARD_NAME := m7
@@ -56,7 +56,7 @@ USE_OPENGL_RENDERER := true
 TARGET_DISPLAY_USE_RETIRE_FENCE := true
 TARGET_USES_C2D_COMPOSITION := true
 TARGET_USES_ION := true
-BOARD_EGL_CFG := device/htc/m7/configs/egl.cfg
+BOARD_EGL_CFG := device/htc/m7univ/configs/egl.cfg
 NUM_FRAMEBUFFER_SURFACE_BUFFERS := 3
 
 # Power
@@ -82,7 +82,7 @@ BOARD_CHARGING_MODE_BOOTING_LPM := /sys/htc_lpm/lpm_mode
 # SELinux
 -include device/qcom/sepolicy/sepolicy.mk
 
-BOARD_SEPOLICY_DIRS += device/htc/m7/sepolicy
+BOARD_SEPOLICY_DIRS += device/htc/m7univ/sepolicy
 
 BOARD_SEPOLICY_UNION += \
     akmd.te \
