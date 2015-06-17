@@ -91,7 +91,7 @@ BOARD_SEPOLICY_UNION += \
 # Vendor Init
 TARGET_UNIFIED_DEVICE := true
 TARGET_INIT_VENDOR_LIB := libinit_m7univ
-TARGET_LIBINIT_DEFINES_FILE := device/htc/fireball/init/init_m7univ.c
+TARGET_LIBINIT_DEFINES_FILE := device/htc/m7univ/init/init_m7univ.c
 
 # TWRP
 TW_THEME := portrait_hdpi
