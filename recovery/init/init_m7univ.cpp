@@ -28,11 +28,10 @@
  */
 
 #include <stdlib.h>
+#include <string.h>
 
-#include "vendor_init.h"
 #include "property_service.h"
-#include "log.h"
-#include "util.h"
+#include "vendor_init.h"
 
 void vendor_load_properties() {
     char platform[PROP_VALUE_MAX];
