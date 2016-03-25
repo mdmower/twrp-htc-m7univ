@@ -118,7 +118,7 @@ static int get_charging_status() {
 }
 
 static void update_led(int charge_status) {
-    FILE *aled, *gled, *rgbled;
+    FILE *aled = NULL, *gled = NULL, *rgbled = NULL;
     bool is_rgbled;
 
     is_rgbled = (access(RGB_LED, F_OK) == 0);
