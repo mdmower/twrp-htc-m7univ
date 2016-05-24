@@ -14,11 +14,15 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-ifeq ($(RECOVERY_VARIANT), twrp)
-ifeq ($(TARGET_DEVICE), m7univ)
+# Inherit from those products. Most specific first.
+$(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 
-LOCAL_PATH := $(call my-dir)
-include $(call all-makefiles-under, $(LOCAL_PATH))
+# Inherit from m7univ device
+$(call inherit-product, device/htc/m7univ/device.mk)
 
-endif
-endif
+# Set those variables here to overwrite the inherited values.
+PRODUCT_BRAND := htc
+PRODUCT_DEVICE := m7univ
+PRODUCT_MANUFACTURER := HTC
+PRODUCT_MODEL := One
+PRODUCT_NAME := full_m7univ
