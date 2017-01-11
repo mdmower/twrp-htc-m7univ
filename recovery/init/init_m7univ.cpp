@@ -28,26 +28,21 @@
  */
 
 #include <stdlib.h>
-#include <string.h>
+#include <string>
 
 #include "property_service.h"
 #include "vendor_init.h"
 
 void vendor_load_properties() {
-    char platform[PROP_VALUE_MAX];
-    char bootmid[PROP_VALUE_MAX];
-    int rc;
-
-    rc = property_get("ro.board.platform", platform);
-    if (!rc || strncmp(platform, ANDROID_TARGET, PROP_VALUE_MAX))
+    std::string platform = property_get("ro.board.platform");
+    if (platform != ANDROID_TARGET)
         return;
 
-    property_get("ro.boot.mid", bootmid);
-
-    if (strstr(bootmid, "PN0720000")) {
+    std::string bootmid = property_get("ro.boot.mid");
+    if (bootmid.find("PN0720000") != std::string::npos) {
         property_set("ro.product.device", "m7wls");
         property_set("ro.build.product", "m7wls");
-    } else if (strstr(bootmid, "PN0731000")) {
+    } else if (bootmid.find("PN0731000") != std::string::npos) {
         property_set("ro.product.device", "m7wlv");
         property_set("ro.build.product", "m7wlv");
     } else {
