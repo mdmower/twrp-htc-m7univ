@@ -1,4 +1,4 @@
-# Copyright (C) 2016 Matthew D. Mower
+# Copyright (C) 2016-2017 Matthew D. Mower
 # Copyright (C) 2013 The CyanogenMod Project
 # Copyright (C) 2012 The Android Open-Source Project
 #
@@ -16,11 +16,11 @@
 
 $(call inherit-product, device/htc/m7univ/full_m7univ.mk)
 
-# Inherit CM full phone configuration
+# Inherit LineageOS full phone configuration
 $(call inherit-product, vendor/cm/config/common_full_phone.mk)
 
 # Device naming
-PRODUCT_NAME := cm_m7univ
+PRODUCT_NAME := lineage_m7univ
 
 # Override build props
 PRODUCT_BUILD_PROP_OVERRIDES += \
