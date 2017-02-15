@@ -14,9 +14,9 @@ on boot
     write /sys/devices/system/cpu/cpu3/cpufreq/scaling_min_freq 384000
     write /sys/class/android_usb/android0/enable 0
     write /sys/class/android_usb/android0/idVendor 0bb4
-    write /sys/class/android_usb/android0/idProduct 0c02
+    write /sys/class/android_usb/android0/idProduct 0f86
     setprop usb.vendor 0bb4
-    setprop usb.product.adb 0c02
+    setprop usb.product.adb 0f86
     setprop usb.product.mtpadb 0f87
     setprop recovery.perf.mode 0
     start chargeled
