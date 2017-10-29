@@ -28,10 +28,23 @@
  */
 
 #include <stdlib.h>
+#define _REALLY_INCLUDE_SYS__SYSTEM_PROPERTIES_H_
+#include <sys/_system_properties.h>
+
 #include <string>
 
 #include "property_service.h"
 #include "vendor_init.h"
+
+void property_override(char const prop[], char const value[]) {
+    prop_info *pi;
+
+    pi = (prop_info*) __system_property_find(prop);
+    if (pi)
+        __system_property_update(pi, value, strlen(value));
+    else
+        __system_property_add(prop, strlen(prop), value, strlen(value));
+}
 
 void vendor_load_properties() {
     std::string platform = property_get("ro.board.platform");
@@ -40,13 +53,13 @@ void vendor_load_properties() {
 
     std::string bootmid = property_get("ro.boot.mid");
     if (bootmid.find("PN0720000") != std::string::npos) {
-        property_set("ro.product.device", "m7wls");
-        property_set("ro.build.product", "m7wls");
+        property_override("ro.product.device", "m7wls");
+        property_override("ro.build.product", "m7wls");
     } else if (bootmid.find("PN0731000") != std::string::npos) {
-        property_set("ro.product.device", "m7wlv");
-        property_set("ro.build.product", "m7wlv");
+        property_override("ro.product.device", "m7wlv");
+        property_override("ro.build.product", "m7wlv");
     } else {
-        property_set("ro.product.device", "m7");
-        property_set("ro.build.product", "m7");
+        property_override("ro.product.device", "m7");
+        property_override("ro.build.product", "m7");
     }
 }

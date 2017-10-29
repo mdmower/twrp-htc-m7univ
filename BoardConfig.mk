@@ -87,7 +87,6 @@ BOARD_CHARGING_MODE_BOOTING_LPM := /sys/htc_lpm/lpm_mode
 BOARD_SEPOLICY_DIRS += device/htc/m7univ/sepolicy
 
 # Vendor Init
-TARGET_UNIFIED_DEVICE := true
 TARGET_INIT_VENDOR_LIB := libinit_m7univ
 
 # TWRP
